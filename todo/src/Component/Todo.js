@@ -17,10 +17,12 @@ function TodoList() {
     };
   
     const removeTodo = (index) => {
-      const updatedTodos = [...todos];
-      updatedTodos.splice(index, 1);
-      setTodos(updatedTodos);
-      setCount((count) => count - 1);
+        if(window.confirm('정말로 삭제하시겠습니까?')){
+            const updatedTodos = [...todos];
+            updatedTodos.splice(index, 1);
+            setTodos(updatedTodos);
+            setCount((count) => count - 1);
+        }
     };
   
     const startEditing = (index, todo) => {
